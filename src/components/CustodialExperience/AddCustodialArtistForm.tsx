@@ -7,11 +7,11 @@ import {
   Input,
   Textarea,
 } from '@sone-dao/tone-react-core-ui'
+import ToneCSSUtils from '@sone-dao/tone-react-css-utils'
 import { UseStyleStore } from '@sone-dao/tone-react-style-store'
 import { isAAContrast } from 'accessible-colors'
 import { useRouter } from 'next/navigation'
 import { useEffect, useState } from 'react'
-import ToneCSSUtils from '../../utils/css'
 import AddCustodialArtistDisplay from './AddCustodialArtistDisplay'
 
 type AddCustodialArtistFormProps = {
