@@ -17,7 +17,7 @@ export default function MenuItem({
 }: MenuItemProps) {
   return (
     <li
-      className="flex items-center mr-2 my-2 px-2 border-solid border-global"
+      className="inline-flex items-center mr-2 px-2 border-solid border-global text-xl"
       style={{ borderBottomWidth: selected ? '2px' : '0' }}
     >
       <Link href={url}>

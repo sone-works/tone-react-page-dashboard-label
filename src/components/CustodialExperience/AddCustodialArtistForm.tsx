@@ -64,7 +64,7 @@ export default function AddCustodialArtistForm({
   const canCreate = display && uniqueUrl && isValidContrast ? true : false
 
   return (
-    <div className="flex flex-col h-full w-full px-2 overflow-y-auto scrollbar-none">
+    <div className="flex flex-col w-full px-2 scrollbar-none">
       <p className="bg-global-flipped text-global-flipped p-2 font-content text-base">
         <i className="fa-fw fa-solid fa-exclamation mr-2" />
         Some HEY this is a BIG DEAL cause you're adding a whole ass artist to
