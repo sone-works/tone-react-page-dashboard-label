@@ -1,4 +1,5 @@
 import { UseStyleStore } from '@sone-dao/tone-react-style-store'
+import Head from 'next/head'
 import { usePathname } from 'next/navigation'
 import { useState } from 'react'
 import AddCustodialArtistForm from './AddCustodialArtistForm'
@@ -24,15 +25,29 @@ export default function CustodialExperience({
 
   if (experience == 'add')
     return (
-      <AddCustodialArtistForm
-        useStyleStore={useStyleStore}
-        basePath={basePath}
-        label={label}
-      />
+      <>
+        <Head>
+          <title>
+            Tone - {label.display || label.entityId}'s Dashboard - Add Custodial
+            Artist
+          </title>
+        </Head>
+        <AddCustodialArtistForm
+          useStyleStore={useStyleStore}
+          basePath={basePath}
+          label={label}
+        />
+      </>
     )
 
   return (
     <>
+      <Head>
+        <title>
+          Tone - {label.display || label.entityId}'s Dashboard - Custodial
+          Artists
+        </title>
+      </Head>
       <CustodialSearchAndAdd
         searchTerm={searchTerm}
         setSearchTerm={setSearchTerm}

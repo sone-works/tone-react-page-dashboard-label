@@ -61,9 +61,11 @@ export default function DashboardLabelPage({
   return (
     <>
       <Head>
-        <title>Tone - {label.display}'s Dashboard</title>
+        <title>
+          Tone - {label.display || label.entityId}'s Dashboard - Stats
+        </title>
       </Head>
-      <main className="h-full bg-global text-global overflow-y-auto scrollbar-none">
+      <div className="h-full bg-global text-global overflow-y-auto scrollbar-none">
         <LabelDisplay label={label} />
         <div className="max-w-screen overflow-x-auto scrollbar-none pb-2">
           <ul className="flex">
@@ -82,7 +84,7 @@ export default function DashboardLabelPage({
         <div className="w-full p-4">
           <ExperienceRouter />
         </div>
-      </main>
+      </div>
     </>
   )
 
