@@ -28,7 +28,7 @@ export default function CustodialArtistItem({
 
   return (
     <li
-      className="flex flex-col p-4 m-2 rounded-xl"
+      className="flex flex-col p-4 my-2 rounded-xl"
       style={{
         backgroundColor,
         color,

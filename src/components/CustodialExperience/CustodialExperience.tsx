@@ -38,7 +38,7 @@ export default function CustodialExperience({
         setSearchTerm={setSearchTerm}
         basePath={basePath}
       />
-      <ul className="flex flex-col w-full py-2">
+      <ul className="flex flex-col w-full py-2 px-4">
         {label.custodianFor.map((entity: any, i: number) => (
           <CustodialArtistItem key={i} entity={entity} />
         ))}

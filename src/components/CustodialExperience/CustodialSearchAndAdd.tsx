@@ -13,7 +13,7 @@ export default function CustodialSearchAndAdd({
   basePath,
 }: CustodialSearchAndAddProps) {
   return (
-    <div className="flex items-center w-full">
+    <div className="flex items-center w-full px-4">
       <Input
         className="grow"
         value={searchTerm}
