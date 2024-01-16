@@ -60,21 +60,21 @@ export default function DashboardLabelPage({
   return (
     <main className="flex flex-col bg-global text-global grow max-h-full overflow-y-auto scrollbar-none">
       <LabelDisplay label={label} />
-      <ul className="block max-w-screen py-2">
-        {navMenu.map((item, i) => (
-          <MenuItem
-            key={i}
-            display={item.display}
-            icon={item.icon}
-            count={item.count}
-            url={basePath + '/' + item.url}
-            selected={experience == item.url}
-          />
-        ))}
-      </ul>
-      <div className="max-h-full grow scrollbar-none">
-        <ExperienceRouter />
+      <div className="flex items-center max-w-screen overflow-x-auto scrollbar-none">
+        <ul className="flex py-2">
+          {navMenu.map((item, i) => (
+            <MenuItem
+              key={i}
+              display={item.display}
+              icon={item.icon}
+              count={item.count}
+              url={basePath + '/' + item.url}
+              selected={experience == item.url}
+            />
+          ))}
+        </ul>
       </div>
+      <ExperienceRouter />
     </main>
   )
 

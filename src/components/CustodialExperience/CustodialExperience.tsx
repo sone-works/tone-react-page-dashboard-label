@@ -32,7 +32,7 @@ export default function CustodialExperience({
     )
 
   return (
-    <div className="flex flex-col w-full px-2 scrollbar-none">
+    <>
       <CustodialSearchAndAdd
         searchTerm={searchTerm}
         setSearchTerm={setSearchTerm}
@@ -43,6 +43,6 @@ export default function CustodialExperience({
           <CustodialArtistItem key={i} entity={entity} />
         ))}
       </ul>
-    </div>
+    </>
   )
 }
