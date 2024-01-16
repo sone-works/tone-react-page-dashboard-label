@@ -4,9 +4,9 @@ export type SettingsExperienceProps = {
 
 export default function SettingsExperience({ label }: SettingsExperienceProps) {
   return (
-    <div className="flex flex-col h-full w-full font-content px-2">
+    <>
       <h4 className="font-header text-global text-2xl mb-2">Profile</h4>
-      <div className="flex items-center justify-center w-full h-1/2 border-2 border-dashed border-global">
+      <div className="flex items-center justify-center w-full h-20 border-2 border-dashed border-global">
         Component: LabelProfileForm
       </div>
       <h4 className="font-header text-global text-2xl mb-2">Access</h4>
@@ -30,6 +30,6 @@ export default function SettingsExperience({ label }: SettingsExperienceProps) {
           })}
         </tbody>
       </table>
-    </div>
+    </>
   )
 }

@@ -105,7 +105,7 @@ export default function AddCustodialArtistForm({
         <Textarea
           name="description"
           label="biography"
-          placeholder="Let loose! I say let loooooOOOOSSSEE!"
+          placeholder="Cooler than a polar bear's toe nail."
         />
         <h4 className="font-header text-global text-2xl my-2">Tone</h4>
         <p className="text-sm font-content mb-4">

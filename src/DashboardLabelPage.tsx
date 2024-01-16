@@ -1,5 +1,6 @@
 import ToneCSSUtils from '@sone-dao/tone-react-css-utils'
 import { UseStyleStore } from '@sone-dao/tone-react-style-store'
+import Head from 'next/head'
 import { usePathname } from 'next/navigation'
 import { useEffect } from 'react'
 import CustodialExperience from './components/CustodialExperience/CustodialExperience'
@@ -58,24 +59,31 @@ export default function DashboardLabelPage({
   }, [label.custodianFor])
 
   return (
-    <main className="flex flex-col bg-global text-global grow max-h-full overflow-y-auto scrollbar-none">
-      <LabelDisplay label={label} />
-      <div className="flex items-center max-w-screen overflow-x-auto scrollbar-none">
-        <ul className="flex py-2">
-          {navMenu.map((item, i) => (
-            <MenuItem
-              key={i}
-              display={item.display}
-              icon={item.icon}
-              count={item.count}
-              url={basePath + '/' + item.url}
-              selected={experience == item.url}
-            />
-          ))}
-        </ul>
-      </div>
-      <ExperienceRouter />
-    </main>
+    <>
+      <Head>
+        <title>Tone - {label.display}'s Dashboard</title>
+      </Head>
+      <main className="h-full bg-global text-global overflow-y-auto scrollbar-none">
+        <LabelDisplay label={label} />
+        <div className="max-w-screen overflow-x-auto scrollbar-none pb-2">
+          <ul className="flex">
+            {navMenu.map((item, i) => (
+              <MenuItem
+                key={i}
+                display={item.display}
+                icon={item.icon}
+                count={item.count}
+                url={basePath + '/' + item.url}
+                selected={experience == item.url}
+              />
+            ))}
+          </ul>
+        </div>
+        <div className="w-full p-4">
+          <ExperienceRouter />
+        </div>
+      </main>
+    </>
   )
 
   function loadLabelColors() {
