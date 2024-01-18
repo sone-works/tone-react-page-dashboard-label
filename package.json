@@ -17,6 +17,7 @@
   ],
   "dependencies": {
     "@sone-dao/tone-react-api": "^2.8.0",
+    "@sone-dao/tone-react-core-ui": "^2.17.0",
     "@sone-dao/tone-react-css-utils": "^0.2.1",
     "@sone-dao/tone-react-style-store": "^0.1.0",
     "accessible-colors": "^1.0.5",
