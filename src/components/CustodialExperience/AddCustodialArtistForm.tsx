@@ -21,12 +21,9 @@ type AddCustodialArtistFormProps = {
 }
 
 export default function AddCustodialArtistForm({
-  useStyleStore,
   basePath,
   label,
 }: AddCustodialArtistFormProps) {
-  const styles = useStyleStore()
-
   const [isLoading, setLoading] = useState<boolean>(false)
   const [error, setError] = useState<string>('')
 
@@ -39,8 +36,14 @@ export default function AddCustodialArtistForm({
   const [location, setLocation] = useState<string>('')
   const [uniqueUrl, setUniqueUrl] = useState<string>('')
 
-  const [colorPrimary, setColorPrimary] = useState<string>(styles.global[0])
-  const [colorSecondary, setColorSecondary] = useState<string>(styles.global[1])
+  const colorsGlobal = ToneCSSUtils.getColors('global')
+
+  const [colorPrimary, setColorPrimary] = useState<string>(
+    colorsGlobal.lighter || ''
+  )
+  const [colorSecondary, setColorSecondary] = useState<string>(
+    colorsGlobal.darker || ''
+  )
   const [isValidContrast, setValidContrast] = useState<boolean>(false)
 
   const api = new ToneApi()
@@ -64,7 +67,7 @@ export default function AddCustodialArtistForm({
   const canCreate = display && uniqueUrl && isValidContrast ? true : false
 
   return (
-    <div className="flex flex-col w-full px-2 scrollbar-none">
+    <div className="flex flex-col w-full px-2">
       <p className="bg-global-flipped text-global-flipped p-2 font-content text-base">
         <i className="fa-fw fa-solid fa-exclamation mr-2" />
         Some HEY this is a BIG DEAL cause you're adding a whole ass artist to
@@ -77,16 +80,20 @@ export default function AddCustodialArtistForm({
         uniqueUrl={uniqueUrl}
       />
       <Form onSubmit={addCustodialArtist}>
-        <h4 className="font-header text-global text-2xl mb-2">
-          Artist Information
-        </h4>
-        <FileSelect name="avatar" label="avatar*" setValue={setAvatar} />
+        <h4 className="font-header text-global text-2xl">Artist Information</h4>
+        <FileSelect
+          name="avatar"
+          label="avatar*"
+          setValue={setAvatar}
+          className="mt-2"
+        />
         <Input
           name="display"
           label="name*"
           placeholder="Artist Name"
           value={display}
           setValue={setDisplay}
+          className="my-2"
         />
         <Input
           name="uniqueUrl"
@@ -94,6 +101,7 @@ export default function AddCustodialArtistForm({
           placeholder="Unique URL"
           value={uniqueUrl}
           setValue={setUniqueUrl}
+          className="my-2"
         />
         <Input
           name="location"
@@ -101,6 +109,7 @@ export default function AddCustodialArtistForm({
           placeholder="Planet Earth, Milkyway Galaxy"
           value={location}
           setValue={setLocation}
+          className="my-2"
         />
         <Textarea
           name="description"
@@ -122,6 +131,7 @@ export default function AddCustodialArtistForm({
           name="primary"
           value={colorPrimary}
           setValue={(value) => setColorPrimary(value)}
+          className="mb-2"
         />
         <ColorPicker
           className="my-1"
@@ -149,8 +159,8 @@ export default function AddCustodialArtistForm({
             name="socialsTwitter"
             startContent={
               <div className="flex items-center">
-                <i className="fa-fw fa-brands fa-x-twitter text-2xl text-global-flipped" />
-                <i className="fa-fw fa-duotone fa-at text-xl text-global-flipped" />
+                <i className="fa-fw fa-brands fa-x-twitter text-2xl" />
+                <i className="fa-fw fa-duotone fa-at text-xl" />
               </div>
             }
           />
@@ -159,8 +169,8 @@ export default function AddCustodialArtistForm({
             name="socialsInstagram"
             startContent={
               <div className="flex items-center">
-                <i className="fa-fw fa-brands fa-instagram text-2xl text-global-flipped" />
-                <i className="fa-fw fa-duotone fa-at text-xl text-global-flipped" />
+                <i className="fa-fw fa-brands fa-instagram text-2xl " />
+                <i className="fa-fw fa-duotone fa-at text-xl" />
               </div>
             }
           />

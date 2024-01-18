@@ -20,7 +20,7 @@ export default function CustodialSearchAndAdd({
         setValue={setSearchTerm}
         placeholder="Search for custodial artist..."
         startContent={
-          <i className="fa-fw fa-regular fa-magnifying-glass text-2xl text-global-flipped" />
+          <i className="fa-fw fa-regular fa-magnifying-glass text-2xl text-global" />
         }
       />
       <Link href={basePath + '/custodial/add'}>
