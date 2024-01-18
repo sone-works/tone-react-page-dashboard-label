@@ -7,7 +7,7 @@ export default function LabelDisplay({ label }: LabelDisplayProps) {
   const api = new ToneApiService()
 
   return (
-    <div className="flex mt-2 w-full p-2">
+    <div className="flex w-full pt-4 px-2">
       <Avatar
         src={api.entities.getAvatarUrlByName(label.uniqueUrl)}
         classNames={{ img: 'h-28 w-28 rounded-full' }}

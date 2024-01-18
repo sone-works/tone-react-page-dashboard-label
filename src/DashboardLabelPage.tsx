@@ -65,7 +65,7 @@ export default function DashboardLabelPage({
           Tone - {label.display || label.entityId}'s Dashboard - Stats
         </title>
       </Head>
-      <div className="h-full bg-global text-global overflow-y-auto scrollbar-none">
+      <div className="bg-global text-global">
         <LabelDisplay label={label} />
         <div className="max-w-screen overflow-x-auto scrollbar-none pb-2">
           <ul className="flex">
