@@ -25,8 +25,6 @@ export default function DashboardLabelPage({
   user,
   useStyleStore,
 }: DashboardLabelPageProps) {
-  console.log({ canAccess, label })
-
   if (!canAccess || !label || !user) return <></>
 
   const navMenu = [
