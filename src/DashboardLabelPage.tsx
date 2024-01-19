@@ -89,7 +89,7 @@ export default function DashboardLabelPage({
   )
 
   function loadLabelColors() {
-    return ToneCSSUtils.setColors('global', label.colors[0], label.colors[1])
+    ToneCSSUtils.setColors('global', label.colors[0], label.colors[1])
   }
 
   function loadEntityColors() {
